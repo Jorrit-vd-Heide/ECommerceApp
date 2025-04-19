@@ -1,5 +1,7 @@
 using ProductService.Domain.Interfaces;
 using ProductService.Infrastructure.Repositories;
+using EventBus.Abstractions;
+using EventBus.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,7 @@ builder.Services.AddControllers();
 
 // Dependency Injection
 builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>();
+builder.Services.AddSingleton<IEventBus, RabbitMQEventBus>();
 
 var app = builder.Build();
 

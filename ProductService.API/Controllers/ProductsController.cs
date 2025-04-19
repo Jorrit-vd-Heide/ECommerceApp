@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EventBus.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 using ProducService.API.Models;
+using ProductService.Application.Events;
 using ProductService.Domain.Entities;
 using ProductService.Domain.Interfaces;
 
@@ -10,10 +12,12 @@ namespace ProducService.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _repo;
+        private readonly IEventBus _eventBus;
 
-        public ProductsController(IProductRepository repo)
+        public ProductsController(IProductRepository repo, IEventBus eventBus)
         {
             _repo = repo;
+            _eventBus = eventBus;
         }
 
         [HttpGet]
@@ -35,6 +39,14 @@ namespace ProducService.API.Controllers
             };
 
             await _repo.AddAsync(product);
+
+            var @event = new ProductCreatedEvent
+            {
+                Name = product.Name,
+                Price = product.Price
+            };
+
+            _eventBus.Publish(@event);
 
             return CreatedAtAction(nameof(GetAll), new {id = product.Id}, product);
         }

@@ -7,7 +7,38 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <Compile Include="obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net9.0\EventBus.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net9.0\EventBus.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net9.0\EventBus.deps.json" />
+    <Content Include="obj\Debug\net9.0\EventBus.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net9.0\EventBus.sourcelink.json" />
+    <Content Include="obj\EventBus.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net9.0\EventBus.dll" />
+    <None Include="bin\Debug\net9.0\EventBus.pdb" />
+    <None Include="obj\Debug\net9.0\EventBus.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net9.0\EventBus.assets.cache" />
+    <None Include="obj\Debug\net9.0\EventBus.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net9.0\EventBus.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net9.0\EventBus.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net9.0\EventBus.dll" />
+    <None Include="obj\Debug\net9.0\EventBus.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net9.0\EventBus.pdb" />
+    <None Include="obj\Debug\net9.0\refint\EventBus.dll" />
+    <None Include="obj\Debug\net9.0\ref\EventBus.dll" />
+    <None Include="obj\EventBus.csproj.nuget.g.props" />
+    <None Include="obj\EventBus.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
   </ItemGroup>
 
