@@ -2,6 +2,7 @@ using ProductService.Domain.Interfaces;
 using ProductService.Infrastructure.Repositories;
 using EventBus.Abstractions;
 using EventBus.RabbitMQ;
+using InventoryService.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>();
 builder.Services.AddSingleton<IEventBus, RabbitMQEventBus>();
 
 var app = builder.Build();
+
+var listener = new RabbitMQListener();
+await listener.StartListeningAsync();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

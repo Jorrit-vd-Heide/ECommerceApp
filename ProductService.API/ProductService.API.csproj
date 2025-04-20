@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EventBus\EventBus.csproj" />
+    <ProjectReference Include="..\InventoryService.API\InventoryService.API.csproj" />
     <ProjectReference Include="..\ProductService.Application\ProductService.Application.csproj" />
     <ProjectReference Include="..\ProductService.Infrastructure\ProductService.Infrastructure.csproj" />
   </ItemGroup>
